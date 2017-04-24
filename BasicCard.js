@@ -1,25 +1,8 @@
+/*jshint esversion:6*/
+function BasicCard(front,back){
+  this.front = front;
+  this.back = back;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//TODO: module.exports = BasicCard;
+module.exports = BasicCard;
