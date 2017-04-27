@@ -1,0 +1,27 @@
+{
+  "name": "flashcard-generator",
+  "version": "1.0.0",
+  "description": "The backend for a basic flashcard application. The backend will essentially constitute an API that allows users to create two types of flashcards.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimelj/Flashcard-Generator.git"
+  },
+  "keywords": [
+    "flash",
+    "card",
+    "cloze"
+  ],
+  "author": "Jimel J. Joseph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimelj/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/jimelj/Flashcard-Generator#readme",
+  "dependencies": {
+    "inquirer": "^3.0.6"
+  }
+}
