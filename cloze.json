@@ -1,10 +1,30 @@
-[
-  {
-    "text":"George Washington was the first president of the United States.",
-    "cloze":"George Washington"
+[{
+    "text": "George Washington was the first president of the United States.",
+    "cloze": "George Washington"
   },
   {
-    "text":"John Adams was the second President of the United States",
-    "cloze":"John Adams"
+    "text": "John Adams was the second President of the United States",
+    "cloze": "John Adams"
+  },
+  {
+    "text":"A member of NATO agreed to help any member nation that was attacked",
+    "cloze":"NATO"
+  },
+  {
+    "text":"Donald Trump is the current president of the United States",
+    "cloze":"Donald Trump"
+  },
+  {
+    "text":"Sean Spicer is the currrent Vice President of the United States",
+    "cloze":"Sean Spicer"
+  },
+  {
+    "text":"A nuclear bomb was dropped in Hiroshima on Aug 6 1945",
+    "cloze":"Hiroshima"
+  },
+  {
+    "text":"John F. Kennedy was Assassinated on Nov 22 1963",
+    "cloze":"Assassinated"
   }
+
 ]

@@ -5,20 +5,18 @@ let inquirer = require('inquirer');
 let basic = require("./basic");
 let cloze = require("./cloze");
 let count = 0;
-
+let score = 0;
 
 function init() {
-  inquirer.prompt([ /* Pass your questions in here */
-    {
-  type: "list",
-  name: "pick",
-  message: "Pick a flash card game",
-  choices: [
-    "Basic Cards",
-    "Cloze Cards"
-   ]
-}
-  ]).then(function(answers) {
+  inquirer.prompt([ /* Pass your questions in here */ {
+    type: "list",
+    name: "pick",
+    message: "Pick a flash card game",
+    choices: [
+      "Basic Cards",
+      "Cloze Cards"
+    ]
+  }]).then(function(answers) {
     // Use user feedback for... whatever!!
     switch (answers.pick) {
       case "Basic Cards":
@@ -30,6 +28,7 @@ function init() {
     }
   });
 }
+
 function askQuestionBasic() {
   if (count < basic.length) {
     let history = new BasicCard(basic[count].front, basic[count].back);
@@ -39,16 +38,20 @@ function askQuestionBasic() {
     }]).then(function(answers) {
       // Use user feedback for... whatever!!
       if (answers.question.toLowerCase() == history.back.toLowerCase()) {
+        score++;
         console.log('You are Correct');
+        console.log('Your Score: ' + score + ' / ' + basic.length);
+
       } else {
         console.log('You are Wrong');
+        console.log('Your Score: ' + score + ' / ' + basic.length);
       }
       count++;
       console.log('==================================================');
       askQuestionBasic();
     });
 
-  }else{
+  } else {
     playAgain();
   }
 }
@@ -62,34 +65,38 @@ function askQuestionCloze() {
     }]).then(function(answers) {
       // Use user feedback for... whatever!!
       if (answers.question.toLowerCase() == history.cloze.toLowerCase()) {
+        score++;
         console.log('You are Correct');
         console.log(history.fullText);
+        console.log('Your Score: ' + score + ' / ' + cloze.length);
       } else {
         console.log('You are Wrong');
+        console.log('Your Score: ' + score + ' / ' + cloze.length);
       }
       count++;
       console.log('==================================================');
       askQuestionCloze();
     });
 
-  }else{
+  } else {
     playAgain();
   }
 }
-function playAgain(){
+
+function playAgain() {
+  count = 0;
   inquirer.prompt({
-      name: "again",
-      type: "confirm",
-      message: "Would you like to play again"
-    }).then(function(answer) {
-      if (answer.again) {
-        // restarts
-        init();
-      }
-      else {
-        console.log('Thanks For playing!');
-      }
-    });
+    name: "again",
+    type: "confirm",
+    message: "Would you like to play again"
+  }).then(function(answer) {
+    if (answer.again) {
+      // restarts
+      init();
+    } else {
+      console.log('Thanks For playing!');
+    }
+  });
 }
 init();
 
